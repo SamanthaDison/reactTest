@@ -13,6 +13,8 @@ class ObservableAppState {
   newer = null
   older = null
 
+  profile = null
+
   // makeAutoObservable comes from mobx library and essentially sets up your 'emits'
   // mobx is 2nd most popular appstate mngmt library for react 
   // create a class and make it observable 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppState } from '../AppState.js';
 import { postsService } from '../services/PostsService.js';
 import './PostCard.scss'
@@ -25,7 +26,9 @@ export default function PostCard({ post }) {
         <div className="PostCard card p-2 m-2">
             <div className='py-2 d-flex justify-content-between align-items-center'>
                 <div className='d-flex  align-items-center'>
-                    <img src={post.creator.picture} className="rounded-circle" height={42} width={42} alt="" />
+                    <Link to={"/profile/" + post.creator?.id}>
+                        <img src={post.creator.picture} className="rounded-circle" height={42} width={42} alt="" />
+                    </Link>
                     <p className='m-0 ps-2'>{post.creator.name}</p>
                 </div>
                 <div>

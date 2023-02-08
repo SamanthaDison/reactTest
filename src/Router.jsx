@@ -6,7 +6,9 @@ import AccountPage from './pages/AccountPage.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import PostsPage from './pages/PostsPage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 import { accountService } from './services/AccountService.js';
+import { postsService } from './services/PostsService.js';
 import AuthGuard from './utils/AuthGuard.jsx';
 
 // this is a more typical router setup to vue or angular
@@ -31,8 +33,14 @@ export const router = createHashRouter([
         element: <PostsPage />
       },
       {
+        path: "profile/:id",
+        element: <ProfilePage />,
+        // loader: postsService.getProfileContent,
+      },
+      {
         path: "account",
         // tries to go and get accnt before loading page (before you can access this route, do this)
+        // loaders must return a value
         loader: accountService.getAccount,
         element:
           <AuthGuard>
