@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// @ts-ignore
 import logo from '../assets/img/cw-logo.png';
 import Login from "./Login.jsx";
 
@@ -25,8 +26,11 @@ export function Navbar() {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto">
           <li>
-            <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
+            {/* <Link to={'About'} className="btn text-success lighten-30 selectable text-uppercase">
               About
+            </Link> */}
+            <Link to={'posts'} className="btn text-success lighten-30 selectable text-uppercase">
+              Posts
             </Link>
           </li>
         </ul>
