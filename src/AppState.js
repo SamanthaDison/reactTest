@@ -8,6 +8,10 @@ class ObservableAppState {
   /** @type {import('./models/Account.js').Account} */
   account = null
 
+  posts = []
+
+  newer = null
+  older = null
 
   // makeAutoObservable comes from mobx library and essentially sets up your 'emits'
   // mobx is 2nd most popular appstate mngmt library for react 
